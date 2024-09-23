@@ -1,0 +1,144 @@
+<form [formGroup]="planForm" (ngSubmit)="onSubmit()">
+  <h2 style="width: 100%; text-align: center; margin-bottom: 5px">
+    Create a New Plan
+  </h2>
+  <p
+    style="
+      text-align: center;
+      color: grey;
+      font-size: 10px;
+      margin-bottom: 15px;
+    "
+  >
+    Please fill out this form to provide your tax information.
+  </p>
+  <label for="planName">Plan Name</label>
+  <input
+    id="planName"
+    formControlName="planName"
+    style="
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    "
+  />
+  <div
+    *ngIf="
+      planForm.get('planName')?.invalid && planForm.get('planName')?.touched
+    "
+  >
+    <span>Please enter a valid plan name</span>
+  </div>
+
+  <label for="shortDescription">Description</label>
+  <input
+    id="shortDescription"
+    formControlName="shortDescription"
+    style="
+      width: 76%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    "
+  />
+  <div
+    *ngIf="
+      planForm.get('shortDescription')?.invalid &&
+      planForm.get('shortDescription')?.touched
+    "
+  >
+    <span>Please enter a valid short description</span>
+  </div>
+
+  <label for="basePrice">Base Price (₹)</label>
+  <input type="number" id="basePrice" formControlName="basePrice" />
+  <div
+    *ngIf="
+      planForm.get('basePrice')?.invalid && planForm.get('basePrice')?.touched
+    "
+  >
+    <span>Please enter a valid base price.</span>
+  </div>
+
+  <label for="cgst">CGST (₹)</label>
+  <input type="number" id="cgst" formControlName="cgst" />
+  <div *ngIf="planForm.get('cgst')?.invalid && planForm.get('cgst')?.touched">
+    <span>Please enter a valid CGST amount.</span>
+  </div>
+
+  <label for="sgst">SGST (₹)</label>
+  <input type="number" id="sgst" formControlName="sgst" />
+  <div *ngIf="planForm.get('sgst')?.invalid && planForm.get('sgst')?.touched">
+    <span>Please enter a valid SGST amount.</span>
+  </div>
+
+  <label for="igst">IGST (₹)</label>
+  <input type="number" id="igst" formControlName="igst" />
+  <div *ngIf="planForm.get('igst')?.invalid && planForm.get('igst')?.touched">
+    <span>Please enter a valid IGST amount.</span>
+  </div>
+
+  <label>Total Tax (₹)</label>
+  <input type="number" formControlName="totalTax" [disabled]="true" />
+
+  <label>Total Amount (₹)</label>
+  <input type="number" formControlName="totalAmount" [disabled]="true" />
+
+  <!-- <label for="isActive">Active Status</label>
+  <input
+    type="checkbox"
+    id="isActive"
+    formControlName="isActive"
+  /> -->
+  <div class="checkbox-container">
+    <input
+      type="checkbox"
+      id="isActive"
+      formControlName="isActive"
+      style="width: 30px"
+    />
+    <label for="isActive">Active Status</label>
+  </div>
+
+  <label for="servicesType">Services Type</label>
+  <input
+    id="servicesType"
+    formControlName="servicesType"
+    style="
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    "
+  />
+  <div
+    *ngIf="
+      planForm.get('servicesType')?.invalid &&
+      planForm.get('servicesType')?.touched
+    "
+  >
+    <span>Please enter a valid services type (e.g., 'ITR').</span>
+  </div>
+
+  <label for="validForDays">Validity (Days)</label>
+  <input type="number" id="validForDays" formControlName="validForDays" />
+  <div
+    *ngIf="
+      planForm.get('validForDays')?.invalid &&
+      planForm.get('validForDays')?.touched
+    "
+  >
+    <span>Please enter the validity in days (e.g., 365).</span>
+  </div>
+
+  <label for="dueDays">Due Days</label>
+  <input type="number" id="dueDays" formControlName="dueDays" />
+  <div
+    *ngIf="planForm.get('dueDays')?.invalid && planForm.get('dueDays')?.touched"
+  >
+    <span>Please enter the number of due days (e.g., 10).</span>
+  </div>
+
+  <button type="submit" [disabled]="planForm.invalid">Create Plan</button>
+</form>

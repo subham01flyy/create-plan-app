@@ -1,0 +1,46 @@
+{
+  "plans": [
+    {
+      "id": "a18e",
+      "planName": "abc",
+      "shortDescription": "dadasd",
+      "basePrice": 9000,
+      "cgst": 100,
+      "sgst": 200,
+      "igst": 900,
+      "isActive": true,
+      "servicesType": "ITR",
+      "validForDays": 90,
+      "dueDays": 9,
+      "eligibilities": []
+    },
+    {
+      "id": "832d",
+      "planName": "Subham",
+      "shortDescription": "asdasdsadsad",
+      "basePrice": 900,
+      "cgst": 10,
+      "sgst": 20,
+      "igst": 30,
+      "isActive": true,
+      "servicesType": "ITR",
+      "validForDays": 90,
+      "dueDays": 9,
+      "eligibilities": []
+    },
+    {
+      "id": "b724",
+      "planName": "New ITR Filling",
+      "shortDescription": "asdasd",
+      "basePrice": 90,
+      "cgst": 20,
+      "sgst": 0,
+      "igst": 0,
+      "isActive": true,
+      "servicesType": "ITR",
+      "validForDays": 90,
+      "dueDays": 2,
+      "eligibilities": []
+    }
+  ]
+}
